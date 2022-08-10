@@ -20,4 +20,5 @@ function onTargetBtnStart() {
 }
 function onTargetBtnStop() {
   clearInterval(timeoutId);
+  btnStart.disabled = false;
 }

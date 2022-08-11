@@ -1,5 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
+
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
 const minEl = document.querySelector('[data-minutes]');
@@ -35,7 +37,7 @@ const options = {
     console.log(selectedDates[0]);
     const currentTime = new Date().getTime();
     if (selectedDates[0] < currentTime) {
-      window.alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
       startBtn.disabled = true;
       return;
     } else {
@@ -47,8 +49,8 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 startBtn.addEventListener('click', onTargetBtn);
+startBtn.disabled = true;
 function onTargetBtn() {
-  startBtn.disabled = true;
   const timerId = setInterval(() => {
     const timerTime = setTime - new Date().getTime();
     if (timerTime <= 0) {
@@ -65,7 +67,5 @@ function onTargetBtn() {
     hoursEl.textContent = addLeadingZero(String(hours));
     minEl.textContent = addLeadingZero(String(minutes));
     seconEl.textContent = addLeadingZero(String(seconds));
-
-    // мені потрібно перебрати обьект щоб присвоїти значення потрібні в days,hours,minuts...
   }, 1000);
 }

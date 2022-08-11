@@ -16,3 +16,59 @@ img {
   display: block;
   max-width: 100%;
 }
+input {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: beige;
+  color: rgba(137, 135, 135, 0.58);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  line-height: 1.29;
+  border: 2px solid darkgray;
+}
+input:hover {
+  color: darkgreen;
+  border: 2px solid darkgreen;
+}
+button {
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
+  color: #d41443;
+  background-color: beige;
+  border: 2px solid darkgray;
+  border-radius: 8px;
+  outline-color: #d41443;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.29;
+  display: inline-block;
+  margin-right: 10px;
+}
+button:hover {
+  color: darkgreen;
+  border: 2px solid darkgreen;
+}
+.timer {
+  display: inline-flex;
+}
+.field {
+  cursor: pointer;
+  color: darkgreen;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.29;
+  font-family: inherit;
+}
+.field:hover {
+  color: #d41443;
+}
+
+.label {
+  margin-right: 10px;
+}

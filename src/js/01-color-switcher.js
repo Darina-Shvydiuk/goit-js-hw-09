@@ -17,8 +17,10 @@ function onTargetBtnStart() {
   }, DELAY);
 
   btnStart.disabled = true;
+  btnStop.disabled = false;
 }
 function onTargetBtnStop() {
   clearInterval(timeoutId);
   btnStart.disabled = false;
+  btnStop.disabled = true;
 }

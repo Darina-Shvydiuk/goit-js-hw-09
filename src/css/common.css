@@ -35,10 +35,10 @@ input:hover {
 }
 button {
   cursor: pointer;
-  height: 35px;
-  width: 100px;
-  color: #d41443;
-  background-color: beige;
+  height: 40px;
+  width: 150px;
+  color: black;
+  background-color: #fafafa;
   border: 2px solid darkgray;
   border-radius: 8px;
   outline-color: #d41443;

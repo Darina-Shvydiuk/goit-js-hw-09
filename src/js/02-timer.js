@@ -8,7 +8,7 @@ const minEl = document.querySelector('[data-minutes]');
 const seconEl = document.querySelector('[data-seconds]');
 const startBtn = document.querySelector('[data-start]');
 let timerId = null;
-let setTime = 0;
+let startTime = 0;
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -41,7 +41,7 @@ const options = {
       startBtn.disabled = true;
       return;
     } else {
-      setTime = selectedDates[0].getTime();
+      startTime = selectedDates[0].getTime();
       startBtn.disabled = false;
     }
   },
@@ -52,13 +52,14 @@ startBtn.addEventListener('click', onTargetBtn);
 startBtn.disabled = true;
 function onTargetBtn() {
   const timerId = setInterval(() => {
-    const timerTime = setTime - new Date().getTime();
-    if (timerTime <= 0) {
+    const timerComponents = startTime - new Date().getTime();
+    if (timerComponents <= 0) {
       clearInterval(timerId);
       return;
     }
 
-    const obj = ({ days, hours, minutes, seconds } = convertMs(timerTime));
+    const obj = ({ days, hours, minutes, seconds } =
+      convertMs(timerComponents));
 
     function addLeadingZero(value) {
       return value.padStart(2, '0');

@@ -58,8 +58,7 @@ function onTargetBtn() {
       return;
     }
 
-    const obj = ({ days, hours, minutes, seconds } =
-      convertMs(timerComponents));
+    const { days, hours, minutes, seconds } = convertMs(timerComponents);
 
     function addLeadingZero(value) {
       return value.padStart(2, '0');
